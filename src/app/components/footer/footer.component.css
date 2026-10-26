@@ -1,0 +1,70 @@
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(3.5rem, 8vw, 7rem) 1.25rem 2rem;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.footer-label {
+  margin: 0 0 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-footer h2 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.3rem);
+  font-weight: 900;
+  letter-spacing: -0.085em;
+  line-height: 0.82;
+}
+
+.footer-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.25rem;
+}
+
+.footer-navigation a,
+.footer-social a {
+  color: inherit;
+  font-size: 0.73rem;
+  text-decoration: none;
+}
+
+.footer-navigation a:hover,
+.footer-navigation a:focus-visible,
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.footer-social a {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border: 1px solid rgb(48 32 25 / 35%);
+  border-radius: 50%;
+  font-size: 0.58rem;
+  font-weight: 700;
+}
+
+.copyright {
+  margin: 1.75rem 0 0;
+  color: #75695d;
+  font-size: 0.62rem;
+}

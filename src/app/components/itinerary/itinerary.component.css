@@ -1,0 +1,120 @@
+.itinerary {
+  position: relative;
+  z-index: 1;
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 8vw, 8rem) 7rem;
+  background: var(--color-olive);
+  color: var(--color-cream);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 91%,
+    91% 93%,
+    79% 90%,
+    67% 95%,
+    54% 91%,
+    42% 96%,
+    29% 91%,
+    17% 94%,
+    8% 91%,
+    0 94%
+  );
+}
+
+.itinerary-inner {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.itinerary-heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.itinerary-heading .eyebrow {
+  color: #e3e7d4;
+}
+
+.itinerary-heading h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.itinerary-intro {
+  margin: 0.75rem 0 0;
+  color: #e4e5d7;
+  font-size: 0.85rem;
+}
+
+.itinerary-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.itinerary-item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(6rem, 10rem);
+  align-items: center;
+  gap: clamp(0.9rem, 3vw, 2rem);
+  padding: 1.25rem 0;
+  border-top: 1px solid rgb(248 240 222 / 27%);
+}
+
+.itinerary-number {
+  color: #edf0df;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.itinerary-copy h3 {
+  margin: 0 0 0.3rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 400;
+}
+
+.itinerary-date,
+.itinerary-description {
+  margin: 0.25rem 0 0;
+  color: #e2e5d4;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.itinerary-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.6;
+  border-radius: 999px 0 0 999px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .itinerary {
+    padding: 3.5rem 1.1rem 6.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 84% 96%, 68% 92%, 51% 97%, 34% 93%, 17% 96%, 0 93%);
+  }
+
+  .itinerary-item {
+    grid-template-columns: 2.8rem minmax(0, 1fr) 5.25rem;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+
+  .itinerary-number {
+    font-size: 2.35rem;
+  }
+
+  .itinerary-item img {
+    aspect-ratio: 1;
+  }
+
+  .itinerary-description {
+    font-size: 0.68rem;
+  }
+}

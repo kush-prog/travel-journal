@@ -1,0 +1,23 @@
+<section class="itinerary" id="itinerary" aria-labelledby="itinerary-title">
+  <div class="itinerary-inner">
+    <div class="itinerary-heading">
+      <p class="eyebrow">Where we’re headed</p>
+      <h2 id="itinerary-title">Upcoming itinerary</h2>
+      <p class="itinerary-intro">A few places already marked on the map.</p>
+    </div>
+
+    <ol class="itinerary-list">
+      @for (item of destinations; track item.number) {
+        <li class="itinerary-item">
+          <span class="itinerary-number" aria-hidden="true">{{ item.number }}</span>
+          <div class="itinerary-copy">
+            <h3>{{ item.destination }}</h3>
+            <p class="itinerary-date">{{ item.dates }}</p>
+            <p class="itinerary-description">{{ item.description }}</p>
+          </div>
+          <img [src]="item.imageUrl" [alt]="item.altText" loading="lazy" />
+        </li>
+      }
+    </ol>
+  </div>
+</section>

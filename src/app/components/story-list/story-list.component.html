@@ -1,0 +1,20 @@
+<section class="stories-section section-wrap" id="stories" aria-labelledby="stories-title">
+  <div class="section-heading">
+    <p class="eyebrow">Notes from the road</p>
+    <h2 id="stories-title">Latest travel stories</h2>
+    <span class="heading-mark" aria-hidden="true">✳</span>
+  </div>
+
+  <div class="story-grid">
+    @for (story of stories; track story.title) {
+      <article class="story-card">
+        <a class="story-image-link" href="#about" [attr.aria-label]="'Read ' + story.title">
+          <img [src]="story.imageUrl" [alt]="story.altText" loading="lazy" />
+        </a>
+        <p class="story-date">{{ story.date }}</p>
+        <h3>{{ story.title }}</h3>
+      </article>
+    }
+  </div>
+  <a class="all-stories-link" href="#about">More stories <span aria-hidden="true">↗</span></a>
+</section>
