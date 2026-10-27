@@ -1,5 +1,5 @@
 @if (story(); as currentStory) {
-  <main class="story-detail">
+  <main class="story-detail" animate.enter="route-enter">
     <a class="back-link" routerLink="/" fragment="stories">← All stories</a>
     <article>
       <header class="story-header">
@@ -18,7 +18,7 @@
     </article>
   </main>
 } @else {
-  <main class="story-detail story-not-found">
+  <main class="story-detail story-not-found" animate.enter="route-enter">
     <p class="story-category">A quiet turn in the road</p>
     <h1>We couldn’t find that story.</h1>
     <a class="back-link" routerLink="/" fragment="stories">← Back to all stories</a>

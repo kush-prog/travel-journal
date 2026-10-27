@@ -32,3 +32,5 @@ Story content is in `src/app/data/story-data.ts`. Add an object matching the `St
 The story search and destination filter use Angular signals and a computed filtered list. Story cards use Angular Router to open `/stories/:slug`; the contact page uses a reactive form with required, email, and minimum-length validation. The app also uses interpolation, property and event binding, and `@for`/`@if` template control flow.
 
 The contact form currently validates and confirms locally; it does not send messages to a server.
+
+Story cards use Angular's `animate.enter` and `animate.leave` APIs when search or filters change. Routed pages use a short enter animation, and CSS transitions add subtle hover feedback. Motion is reduced for visitors whose device has the reduced-motion preference enabled.

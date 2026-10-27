@@ -29,7 +29,7 @@
 
   <div class="story-grid">
     @for (story of filteredStories(); track story.slug) {
-      <article class="story-card">
+      <article class="story-card" animate.enter="story-card-enter" animate.leave="story-card-leave">
         <a
           class="story-image-link"
           [routerLink]="['/stories', story.slug]"
@@ -44,7 +44,9 @@
         </h3>
       </article>
     } @empty {
-      <p class="no-stories">No stories match those filters. Try another search or destination.</p>
+      <p class="no-stories" animate.enter="story-empty-enter" animate.leave="story-empty-leave">
+        No stories match those filters. Try another search or destination.
+      </p>
     }
   </div>
   <p class="story-count" aria-live="polite">

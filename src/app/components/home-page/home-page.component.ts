@@ -7,7 +7,7 @@ import { StoryList } from '../story-list/story-list.component';
   imports: [Hero, StoryList, Itinerary],
   selector: 'app-home-page',
   template: `
-    <main>
+    <main animate.enter="route-enter">
       <app-hero />
       <app-story-list />
       <app-itinerary />
