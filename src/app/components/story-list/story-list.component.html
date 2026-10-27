@@ -5,16 +5,49 @@
     <span class="heading-mark" aria-hidden="true">✳</span>
   </div>
 
+  <div class="story-filters" role="search">
+    <label class="search-field">
+      <span>Search stories</span>
+      <input
+        type="search"
+        placeholder="Try Rome or a long walk"
+        [value]="searchQuery()"
+        (input)="updateSearch($event)"
+      />
+    </label>
+    <label class="category-field">
+      <span>Destination</span>
+      <select [value]="selectedCategory()" (change)="updateCategory($event)">
+        @for (category of categories; track category) {
+          <option [value]="category">
+            {{ category === 'All' ? 'All destinations' : category }}
+          </option>
+        }
+      </select>
+    </label>
+  </div>
+
   <div class="story-grid">
-    @for (story of stories; track story.title) {
+    @for (story of filteredStories(); track story.slug) {
       <article class="story-card">
-        <a class="story-image-link" href="#about" [attr.aria-label]="'Read ' + story.title">
+        <a
+          class="story-image-link"
+          [routerLink]="['/stories', story.slug]"
+          [attr.aria-label]="'Read ' + story.title"
+        >
           <img [src]="story.imageUrl" [alt]="story.altText" loading="lazy" />
         </a>
+        <p class="story-category">{{ story.category }}</p>
         <p class="story-date">{{ story.date }}</p>
-        <h3>{{ story.title }}</h3>
+        <h3>
+          <a [routerLink]="['/stories', story.slug]">{{ story.title }}</a>
+        </h3>
       </article>
+    } @empty {
+      <p class="no-stories">No stories match those filters. Try another search or destination.</p>
     }
   </div>
-  <a class="all-stories-link" href="#about">More stories <span aria-hidden="true">↗</span></a>
+  <p class="story-count" aria-live="polite">
+    Showing {{ filteredStories().length }} of {{ storyCount }} stories
+  </p>
 </section>

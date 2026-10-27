@@ -1,6 +1,6 @@
 # The Roam Report
 
-A beginner-friendly Angular travel journal homepage built with standalone components, TypeScript data, and plain CSS.
+A beginner-friendly Angular travel journal with standalone components, signal-based story filtering, routed story details, and a validated contact form.
 
 ## Run the app
 
@@ -17,11 +17,18 @@ Open `http://localhost:4200/`. To create a production build, run `npm run build`
 - `src/app/components/header/` contains the brand, navigation, and mobile menu.
 - `src/app/components/hero/` contains the introduction and featured story.
 - `src/app/components/story-list/` renders the latest stories from a TypeScript array.
+- `src/app/components/story-detail/` displays an individual story selected by its route slug.
+- `src/app/components/contact-page/` provides a reactive, validated contact form.
+- `src/app/components/home-page/` arranges the homepage sections for the root route.
 - `src/app/components/itinerary/` renders upcoming destinations from a TypeScript array.
 - `src/app/components/footer/` contains closing navigation and copyright information.
+- `src/app/app.routes.ts` defines the homepage, story, and contact routes.
+- `src/app/data/story-data.ts` is the shared source of story content for the cards and detail pages.
 - `src/app/models/` defines the story and itinerary data shapes.
 - `src/styles.css` contains shared colors, reset styles, and focus styles.
 
-Story and itinerary content lives in the `stories` and `destinations` arrays in their respective components. Add another object that matches its model interface to show another card or destination.
+Story content is in `src/app/data/story-data.ts`. Add an object matching the `Story` interface with a unique slug to add a searchable/filterable card and a matching detail route. Upcoming destinations are in the itinerary component; add an object matching the `ItineraryItem` interface to add another stop.
 
-The page uses Angular interpolation for text, property binding for image sources and accessibility labels, click binding for the mobile menu, and `@for` to render the data arrays.
+The story search and destination filter use Angular signals and a computed filtered list. Story cards use Angular Router to open `/stories/:slug`; the contact page uses a reactive form with required, email, and minimum-length validation. The app also uses interpolation, property and event binding, and `@for`/`@if` template control flow.
+
+The contact form currently validates and confirms locally; it does not send messages to a server.

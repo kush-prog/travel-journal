@@ -1,5 +1,5 @@
 <header class="site-header">
-  <a class="brand" href="#top" aria-label="The Roam Report home">
+  <a class="brand" routerLink="/" fragment="top" aria-label="The Roam Report home">
     <span class="brand-mark" aria-hidden="true">R</span>
     <span>The Roam Report</span>
   </a>
@@ -21,8 +21,9 @@
     [class.site-navigation--open]="menuOpen"
     aria-label="Main navigation"
   >
-    <a href="#top" (click)="closeMenu()">Home</a>
-    <a href="#stories" (click)="closeMenu()">Articles</a>
-    <a href="#about" (click)="closeMenu()">About</a>
+    <a routerLink="/" fragment="top" (click)="closeMenu()">Home</a>
+    <a routerLink="/" fragment="stories" (click)="closeMenu()">Articles</a>
+    <a routerLink="/" fragment="about" (click)="closeMenu()">About</a>
+    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
   </nav>
 </header>

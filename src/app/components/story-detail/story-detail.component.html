@@ -1,0 +1,26 @@
+@if (story(); as currentStory) {
+  <main class="story-detail">
+    <a class="back-link" routerLink="/" fragment="stories">← All stories</a>
+    <article>
+      <header class="story-header">
+        <p class="story-category">{{ currentStory.category }} · {{ currentStory.date }}</p>
+        <h1>{{ currentStory.title }}</h1>
+        <p class="story-excerpt">{{ currentStory.excerpt }}</p>
+      </header>
+
+      <img class="story-cover" [src]="currentStory.imageUrl" [alt]="currentStory.altText" />
+
+      <div class="story-body">
+        @for (paragraph of currentStory.paragraphs; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+    </article>
+  </main>
+} @else {
+  <main class="story-detail story-not-found">
+    <p class="story-category">A quiet turn in the road</p>
+    <h1>We couldn’t find that story.</h1>
+    <a class="back-link" routerLink="/" fragment="stories">← Back to all stories</a>
+  </main>
+}
